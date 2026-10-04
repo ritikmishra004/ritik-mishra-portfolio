@@ -48,7 +48,7 @@ export const projects: Project[] = [
     features: ['Natural-language coding tasks', 'Task planning', 'Workspace inspection', 'File reading, creation, and editing', 'Allow-listed command execution', 'Tool calling and MCP', 'Human-in-the-loop approval', 'Verification and retry/error handling', 'Task queue and progress tracking', 'Chat threads and history', 'Authentication'],
     outcome: null,
     executionNote: 'The Streamlit UI, FastAPI backend, and Render API are remote. The local agent and local workspace access remain on the user’s computer, so the complete coding workflow is not fully cloud-hosted.',
-    links: { ...emptyLinks(), live: 'https://codingagent-2ua8wkixrewzgkf6synxr5.streamlit.app/', github: 'https://github.com/ritikmishra004/coding_agent', apiDocs: 'https://coding-agent-api-7nr2.onrender.com/docs' },
+    links: { ...emptyLinks(), github: 'https://github.com/ritikmishra004/coding_agent' },
     featured: true, demoType: 'streamlit', requiresLocalSetup: true, visual: { kind: 'architecture', image: null }, metrics: [],
     caseStudy: [
       { label: 'Overview', content: 'An agentic AI coding assistant built around a remote API and a local execution environment.' },
