@@ -10,6 +10,7 @@ export type ProjectLinks = {
 export type CaseStudySection = { label: string; content: string };
 export type ProjectVisual = { kind: 'architecture' | 'pipeline' | 'tools' | 'metrics'; image: string | null };
 export type ProjectMetric = { label: string; value: string };
+export type ProjectScreenshot = { src: string; alt: string; label: string };
 
 export type Project = {
   slug: string;
@@ -31,6 +32,7 @@ export type Project = {
   caseStudy: CaseStudySection[];
   visual: ProjectVisual;
   metrics: ProjectMetric[];
+  screenshots?: ProjectScreenshot[];
 };
 
 const emptyLinks = (): ProjectLinks => ({ live: null, github: null, video: null, apiDocs: null, architecture: null, localRun: null });
@@ -71,7 +73,11 @@ export const projects: Project[] = [
     features: ['PDF, DOCX, TXT, Markdown, and CSV ingestion', 'Chunk size 1000', 'Chunk overlap 200', 'CPU embeddings', 'Normalized embeddings', 'Top-k retrieval of 4', 'Thread-based state'],
     outcome: null, executionNote: null,
     links: { ...emptyLinks(), live: 'https://rag-knowledge-base-assistant-8pyr4gmuisqreops6p4ud3.streamlit.app/', github: 'https://github.com/ritikmishra004/RAG-Knowledge-Base-Assistant' },
-    featured: true, demoType: 'streamlit', requiresLocalSetup: false, visual: { kind: 'pipeline', image: null }, metrics: [],
+    featured: true, demoType: 'streamlit', requiresLocalSetup: false, visual: { kind: 'pipeline', image: null }, metrics: [], screenshots: [
+      { src: '/projects/enterprise-rag/overview.webp', alt: 'Enterprise RAG Knowledge Assistant application overview', label: 'Overview' },
+      { src: '/projects/enterprise-rag/knowledge-base.webp', alt: 'Enterprise RAG Knowledge Assistant knowledge base screen', label: 'Knowledge base' },
+      { src: '/projects/enterprise-rag/chat.webp', alt: 'Enterprise RAG Knowledge Assistant chat screen', label: 'Chat' }
+    ],
     caseStudy: [
       { label: 'Problem', content: 'Knowledge spread across PDFs, DOCX files, text, Markdown, and CSV needs a focused retrieval workflow before an LLM can answer questions over it.' },
       { label: 'Solution', content: 'The assistant turns uploaded documents into searchable chunks, retrieves the most similar context, and generates an answer using that context.' },
@@ -92,7 +98,12 @@ export const projects: Project[] = [
     features: ['Intelligent topic routing', 'Closed-book mode', 'Hybrid mode', 'Open-book mode', 'Adaptive web research', 'Structured evidence', 'Planning', 'Parallel section generation', 'Reducer / merge stage', 'Markdown output'],
     outcome: null, executionNote: null,
     links: { ...emptyLinks(), live: 'https://blogwritingagent-jcamuzwwxcw7xa7pam3mal.streamlit.app/', github: 'https://github.com/ritikmishra004/Blog_writing_agent' },
-    featured: true, demoType: 'streamlit', requiresLocalSetup: false, visual: { kind: 'pipeline', image: null }, metrics: [],
+    featured: true, demoType: 'streamlit', requiresLocalSetup: false, visual: { kind: 'pipeline', image: null }, metrics: [], screenshots: [
+      { src: '/projects/blog-writing-agent/main.webp', alt: 'AI Blog Writing Agent application overview', label: 'Main' },
+      { src: '/projects/blog-writing-agent/plan.webp', alt: 'AI Blog Writing Agent planning screen', label: 'Plan' },
+      { src: '/projects/blog-writing-agent/evidence.webp', alt: 'AI Blog Writing Agent evidence screen', label: 'Evidence' },
+      { src: '/projects/blog-writing-agent/markdown-preview.webp', alt: 'AI Blog Writing Agent Markdown preview', label: 'Markdown preview' }
+    ],
     caseStudy: [
       { label: 'Problem', content: 'A useful writing workflow must decide when research is necessary and keep research, planning, and section generation coordinated.' },
       { label: 'Solution', content: 'The agent combines routing, optional Tavily research, structured evidence, planning, parallel workers, and a reducer into one LangGraph workflow.' },
@@ -164,7 +175,7 @@ export const projects: Project[] = [
     stack: ['Python', 'Pandas', 'NumPy', 'Scikit-learn', 'XGBoost', 'Matplotlib', 'Seaborn'],
     features: ['Car brand / model', 'Car age', 'Kilometers driven', 'Fuel type', 'Seller type', 'Transmission', 'Previous owners', 'Kilometers driven per year'],
     outcome: 'Test R²: 0.793 · 5-fold Cross-Validation R²: 0.777', executionNote: 'No live demo is available. The serialized model artifact is car_price_model.pkl.',
-    links: { ...emptyLinks(), github: 'https://github.com/ritikmishra004/car-price-prediction' },
+    links: { ...emptyLinks(), live: 'https://car-price-prediction-3z49.onrender.com', github: 'https://github.com/ritikmishra004/car-price-prediction' },
     featured: false, demoType: null, requiresLocalSetup: false, visual: { kind: 'metrics', image: null },
     metrics: [{ label: 'Test R²', value: '0.793' }, { label: '5-fold CV R²', value: '0.777' }, { label: 'Unique records', value: '3,577' }], caseStudy: [
       { label: 'Dataset', content: 'The dataset contains 4,340 original records and 3,577 unique records after duplicate removal.' },

@@ -8,5 +8,5 @@ export const social = {
     { label: 'GitHub', href: 'https://github.com/ritikmishra004' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/ritikmishra-ai/' }
   ] satisfies SocialLink[],
-  resumeUrl: null as string | null
+  resumeUrl: '/resume.pdf' as string | null
 };

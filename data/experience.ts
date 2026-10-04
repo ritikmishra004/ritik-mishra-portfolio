@@ -1,7 +1,7 @@
-export type TimelineItem = { period: string; title: string; organisation: string | null; description: string | null; details?: string[] };
+export type TimelineItem = { period: string; title: string; organisation: string | null; description: string | null; details?: string[]; location?: string | null; manager?: string | null };
 
 export const experience: TimelineItem[] = [
-  { period: 'Joined 17 November 2025 · 3 months', title: 'Data Science Intern — Tech Team', organisation: 'Adviktech Beat Services (OPC) Private Limited', description: null, details: ['Data collection, cleaning, and preprocessing', 'Exploratory data analysis', 'Statistical methods and machine learning algorithms', 'Predictive model development and evaluation', 'Pandas, NumPy, Scikit-learn, and Matplotlib', 'Data visualization, dashboards, reports, and documentation'] }
+  { period: '17 November 2025 – February 2026 · 3 months', title: 'Data Science Intern — Tech Team', organisation: 'Adviktech Beat Services (OPC) Private Limited', description: null, location: 'Greater Noida West, Sector 4, Uttar Pradesh', manager: 'Pawan Panchal', details: ['Data collection, cleaning, and preprocessing', 'Exploratory data analysis', 'Statistical methods and machine learning algorithms', 'Predictive model development and evaluation', 'Pandas, NumPy, Scikit-learn, and Matplotlib', 'Data visualization, dashboards, reports, and documentation'] }
 ];
 
 export const education: TimelineItem[] = [
