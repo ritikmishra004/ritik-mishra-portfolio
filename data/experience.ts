@@ -5,5 +5,7 @@ export const experience: TimelineItem[] = [
 ];
 
 export const education: TimelineItem[] = [
-  { period: 'Graduation year: 2026', title: 'B.Tech in Information Technology', organisation: 'Gautam Buddha University', description: 'CGPA: 8.35/10' }
+  { period: '2022 — 2026 · CGPA: 8.35 / 10', title: 'B.Tech in Information Technology', organisation: 'Gautam Buddha University', description: null },
+  { period: '', title: '12th', organisation: 'D.S.R Modern School, Noida', description: null },
+  { period: '', title: '10th', organisation: 'D.S.R Modern School, Noida', description: null }
 ];

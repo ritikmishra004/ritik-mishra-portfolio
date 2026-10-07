@@ -14,7 +14,7 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
     {project.featured && <div className="mt-6 space-y-3"><ProjectVisual project={project} />{project.screenshots?.[0] && <ProjectScreenshotPreview screenshot={project.screenshots[0]} />}</div>}
     <div className="mt-5"><TechStack items={project.stack} /></div>
     <div className="mt-auto flex flex-wrap items-center gap-3 pt-8">
-      <ProjectLinks links={project.links} compact liveLabel={project.slug === 'ai-coding-agent' ? 'Open Web App' : undefined} />
+      <ProjectLinks links={project.links} compact hiddenKeys={project.slug === 'ai-coding-agent' ? ['live', 'apiDocs'] : []} />
       <Link href={`/projects/${project.slug}`} className="button-secondary"><ArrowUpRight size={14} />Case Study</Link>
     </div>
   </article>;
