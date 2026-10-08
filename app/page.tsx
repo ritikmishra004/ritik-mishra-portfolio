@@ -12,6 +12,7 @@ import { HeroTitle } from '@/components/HeroTitle';
 import { HeroGrid } from '@/components/HeroGrid';
 import { ExperienceTimeline } from '@/components/ExperienceTimeline';
 import { ScrollRail } from '@/components/ScrollRail';
+import { CertificationsSection } from '@/components/CertificationsSection';
 import { certifications } from '@/data/certifications';
 
 function SectionHeading({ index, title, text }: { index: string; title: string; text?: string }) {
@@ -47,7 +48,7 @@ export default function Home() {
 
     <section id="education" className="border-y border-line bg-panel/35 scroll-mt-20"><div className="shell py-16 md:py-20"><SectionHeading index="06 / Education" title="Education" text="The academic path supporting the work." /><AcademicTimeline /></div></section>
 
-    <section id="certifications" className="shell scroll-mt-20 py-16 md:py-20"><SectionHeading index="07 / Certifications" title="Certifications" text="Six completed learning milestones across AI, data, and programming." /><div className="certification-grid">{certifications.map((cert, index) => <Reveal key={cert.number} delay={index * .06}><article className="certification-card"><div className="flex items-center justify-between"><span className="text-[10px] text-signal">{cert.number}</span><ArrowUpRight className="certification-arrow text-muted" size={15} /></div><h3 className="mt-7 font-display text-lg leading-6 text-white">{cert.title}</h3><p className="mt-3 text-xs uppercase tracking-[.12em] text-muted">{cert.issuer}</p></article></Reveal>)}</div></section>
+    <section id="certifications" className="shell scroll-mt-20 py-16 md:py-20"><SectionHeading index="07 / Certifications" title="Certifications" text="Six completed learning milestones across AI, data, and programming." /><CertificationsSection certifications={certifications} /></section>
 
     <section id="at-a-glance" className="border-y border-line bg-panel/35 scroll-mt-20"><div className="shell py-12 md:py-14"><SectionHeading index="At a glance" title="At a glance" text="A compact view of the person behind the systems." /><div className="glance-grid">{[['ROLE', 'AI Engineer'], ['FOCUS', 'GenAI & Agentic Systems'], ['BASED IN', 'Galaxy Vega, Techzone 4, Greater Noida West, India'], ['LANGUAGES', 'English · Hindi'], ['CERTIFICATIONS', '06 completed']].map(([label, value], index) => <Reveal key={label} delay={index * .06}><article className="glance-item"><p className="eyebrow">{label}</p><p className="mt-3 font-display text-lg text-white">{value}</p></article></Reveal>)}</div></div></section>
 

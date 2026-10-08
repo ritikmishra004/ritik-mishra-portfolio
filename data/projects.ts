@@ -50,6 +50,43 @@ export const projects: Project[] = [
     executionNote: 'The Streamlit UI, FastAPI backend, and Render API are remote. The local agent and local workspace access remain on the user’s computer, so the complete coding workflow is not fully cloud-hosted.',
     links: { ...emptyLinks(), github: 'https://github.com/ritikmishra004/coding_agent' },
     featured: true, demoType: 'streamlit', requiresLocalSetup: true, visual: { kind: 'architecture', image: null }, metrics: [],
+    screenshots: [
+      {
+        src: '/projects/ai-coding-agent/01-login.png',
+        alt: 'AI Coding Agent user authentication screen',
+        label: 'Login'
+      },
+      {
+        src: '/projects/ai-coding-agent/02-local-agent-vscode.png',
+        alt: 'AI Coding Agent local execution in VS Code terminal',
+        label: 'Local Agent in VS Code'
+      },
+      {
+        src: '/projects/ai-coding-agent/03-workspace-selection.png',
+        alt: 'AI Coding Agent workspace directory configuration',
+        label: 'Workspace Selection'
+      },
+      {
+        src: '/projects/ai-coding-agent/04-agent-progress.png',
+        alt: 'AI Coding Agent task progress and execution state',
+        label: 'Agent Progress'
+      },
+      {
+        src: '/projects/ai-coding-agent/05-human-approval.png',
+        alt: 'AI Coding Agent human-in-the-loop tool execution approval dialog',
+        label: 'Human Approval'
+      },
+      {
+        src: '/projects/ai-coding-agent/06-task-and-verification.png',
+        alt: 'AI Coding Agent task planning and verification interface',
+        label: 'Task & Verification'
+      },
+      {
+        src: '/projects/ai-coding-agent/07-merge-sort-code.png',
+        alt: 'AI Coding Agent merge sort code generation and inspection',
+        label: 'Merge Sort Code Generation'
+      }
+    ],
     caseStudy: [
       { label: 'Overview', content: 'An agentic AI coding assistant built around a remote API and a local execution environment.' },
       { label: 'What it does', content: 'It handles natural-language coding tasks, plans work, inspects a workspace, reads and edits files, executes allow-listed commands, and tracks progress through a task queue.' },
