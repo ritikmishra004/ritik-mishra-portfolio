@@ -66,9 +66,13 @@ function triggerKeyDown(event: KeyboardEvent<HTMLElement>, index: number, open: 
   if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(index, event.currentTarget); }
 }
 
-export function ProjectScreenshotPreview({ screenshot }: { screenshot: ProjectScreenshot }) {
+export function ProjectScreenshotPreview({ screenshot, screenshots }: { screenshot?: ProjectScreenshot; screenshots?: ProjectScreenshot[] }) {
+  const activeList = screenshots && screenshots.length > 0 ? screenshots : screenshot ? [screenshot] : [];
+  if (activeList.length === 0) return null;
+  const preview = screenshot ?? activeList[0];
+  const initialIndex = screenshot ? Math.max(0, activeList.findIndex((s) => s.src === screenshot.src)) : 0;
   const reducedMotion = useReducedMotion();
-  return <ScreenshotLightbox screenshots={[screenshot]}>{(open) => <motion.figure className="project-screenshot-preview" role="button" tabIndex={0} aria-label={`Open ${screenshot.label} screenshot`} onClick={(event) => open(0, event.currentTarget)} onKeyDown={(event) => triggerKeyDown(event, 0, open)} initial={reducedMotion ? false : { opacity: 0, y: 12, scale: .97, clipPath: 'inset(12% 0 12% 0)' }} whileInView={reducedMotion ? undefined : { opacity: 1, y: 0, scale: 1, clipPath: 'inset(0% 0 0% 0)' }} viewport={{ once: false, amount: .2 }} transition={{ duration: .7, ease: [0.22, 1, 0.36, 1] }}><Image src={screenshot.src} alt={screenshot.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" loading="lazy" /><figcaption>{screenshot.label}</figcaption></motion.figure>}</ScreenshotLightbox>;
+  return <ScreenshotLightbox screenshots={activeList}>{(open) => <motion.figure className="project-screenshot-preview" role="button" tabIndex={0} aria-label={`Open ${preview.label} screenshot`} onClick={(event) => open(initialIndex, event.currentTarget)} onKeyDown={(event) => triggerKeyDown(event, initialIndex, open)} initial={reducedMotion ? false : { opacity: 0, y: 12, scale: .97, clipPath: 'inset(12% 0 12% 0)' }} whileInView={reducedMotion ? undefined : { opacity: 1, y: 0, scale: 1, clipPath: 'inset(0% 0 0% 0)' }} viewport={{ once: false, amount: .2 }} transition={{ duration: .7, ease: [0.22, 1, 0.36, 1] }}><Image src={preview.src} alt={preview.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover object-top" loading="lazy" /><figcaption>{preview.label}</figcaption></motion.figure>}</ScreenshotLightbox>;
 }
 
 export function ProjectScreenshotShowcase({ screenshots }: { screenshots: ProjectScreenshot[] }) {

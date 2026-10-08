@@ -15,7 +15,7 @@ export function ProjectCard({ project, priority = false }: { project: Project; p
     <p className="mt-3 max-w-md text-sm leading-6 text-muted">{project.summary}</p>
     {project.featured && <div className="mt-6 space-y-3">
       <ProjectVisual project={project} />
-      {project.slug !== 'ai-coding-agent' && project.screenshots?.[0] && <ProjectScreenshotPreview screenshot={project.screenshots[0]} />}
+      {project.slug !== 'ai-coding-agent' && project.screenshots?.[0] && <ProjectScreenshotPreview screenshot={project.screenshots[0]} screenshots={project.screenshots} />}
       {isCodingAgent && <ProjectScreenshotTeaser project={project} />}
     </div>}
     <div className="mt-5"><TechStack items={project.stack} /></div>
