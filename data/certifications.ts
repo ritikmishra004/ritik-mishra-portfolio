@@ -11,6 +11,15 @@ export type Certification = {
 export const certifications: Certification[] = [
   {
     number: '01',
+    title: 'AI Engineer Core Track: LLM Engineering, RAG, QLoRA, Agents',
+    issuer: 'Udemy',
+    image: '/certificates/previews/ai-engineer-core-track-llm-rag-qlora-agents.png',
+    pdfUrl: '/certificates/pdfs/ai-engineer-core-track-llm-rag-qlora-agents.pdf',
+    issueDate: '12 October 2026',
+    credentialUrl: 'https://www.udemy.com/certificate/UC-3900b0a0-1dad-406d-a82e-10b646062038/'
+  },
+  {
+    number: '02',
     title: 'Introduction to Generative AI Studio',
     issuer: 'Simplilearn SkillUp',
     image: '/certificates/previews/introduction-to-generative-ai-studio.png',
@@ -19,7 +28,7 @@ export const certifications: Certification[] = [
     credentialUrl: null
   },
   {
-    number: '02',
+    number: '03',
     title: 'Generative AI for Everyone',
     issuer: 'Simplilearn SkillUp',
     image: '/certificates/previews/generative-ai-for-everyone.png',
@@ -28,7 +37,7 @@ export const certifications: Certification[] = [
     credentialUrl: null
   },
   {
-    number: '03',
+    number: '04',
     title: 'Python Coder',
     issuer: 'Kaggle',
     image: '/certificates/previews/python-coder.png',
@@ -37,7 +46,7 @@ export const certifications: Certification[] = [
     credentialUrl: null
   },
   {
-    number: '04',
+    number: '05',
     title: 'Introduction to Machine Learning',
     issuer: 'Kaggle',
     image: '/certificates/previews/introduction-to-machine-learning.png',
@@ -46,7 +55,7 @@ export const certifications: Certification[] = [
     credentialUrl: null
   },
   {
-    number: '05',
+    number: '06',
     title: 'SQL (Basic)',
     issuer: 'HackerRank',
     image: '/certificates/previews/sql-basic.png',
@@ -55,7 +64,7 @@ export const certifications: Certification[] = [
     credentialUrl: null
   },
   {
-    number: '06',
+    number: '07',
     title: 'Data Science 101',
     issuer: 'IBM / Cognitive Class',
     image: '/certificates/previews/data-science-101.png',
